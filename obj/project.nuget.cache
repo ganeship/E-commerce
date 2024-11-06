@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CLFFBiGwNT8=",
+  "dgSpecHash": "Y/UJyzMUNP0=",
   "success": true,
-  "projectFilePath": "C:\\Users\\HP\\source\\repos\\E-commerce\\E-commerce.csproj",
+  "projectFilePath": "C:\\MyProject\\E-commerce\\E-commerce.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HP\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

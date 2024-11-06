@@ -8,7 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\adminpages\" />
     <Folder Include="Pages\sellerpages\" />
   </ItemGroup>
 

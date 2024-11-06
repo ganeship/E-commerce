@@ -1,0 +1,60 @@
+﻿@page
+@model E_commerce.Pages.adminpages.SellerAuthenticationModel
+
+@{
+    ViewData["Title"] = "Seller Authentication";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form method="get" asp-page="AdminHome">
+    <button type="submit" class="btn btn-primary mb-2 w-100">AdminHome</button>
+</form>
+
+
+@if (Model.SellersList != null && Model.SellersList.Count > 0)
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Seller Name</th>
+                <th>Phone Number</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Pin Code</th>
+                <th>Shop Name</th>
+                <th>Verified</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var seller in Model.SellersList)
+            {
+                <tr>
+                    <td>@seller.Name</td>
+                    <td>@seller.PhoneNumber</td>
+                    <td>@seller.Email</td>
+                    <td>@seller.Address</td>
+                    <td>@seller.PinCode</td>
+                    <td>@seller.ShopName</td>
+                    <td>@(seller.IsVerified ? "Verified" : "Not Verified")</td>
+                    <td>
+                        <form method="post" asp-page-handler="Verify" style="display:inline;">
+                            <input type="hidden" name="sellerId" value="@seller.Id" />
+                            <button type="submit" class="btn btn-primary">Verify</button>
+                        </form>
+
+                        <form method="post" asp-page-handler="Delete" style="display:inline;">
+                            <input type="hidden" name="sellerId" value="@seller.Id" />
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No unverified sellers found.</p>
+}

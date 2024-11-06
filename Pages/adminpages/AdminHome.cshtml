@@ -1,0 +1,27 @@
+﻿@page
+@model E_commerce.Pages.adminpages.AdminHomeModel
+@{
+}
+<div class="row">
+    <div class="col-3 d-flex flex-column">
+        <h2>Admin Options</h2>
+
+        
+        <form method="get" asp-page="/adminpages/Sellers">
+            <button type="submit" class="btn btn-primary mb-2 w-100">Sellers</button>
+        </form>
+
+        <form method="get" asp-page="/adminpages/Users">
+            <button type="submit" class="btn btn-primary mb-2 w-100">Users</button>
+        </form>
+
+        <form method="get" asp-page="/adminpages/Products">
+            <button type="submit" class="btn btn-primary mb-2 w-100">Products</button>
+        </form>
+
+        <form method="get" asp-page="/adminpages/SellerAuthentication">
+            <button type="submit" class="btn btn-primary mb-2 w-100">Seller Authentication</button>
+        </form>
+
+    </div>
+</div>

@@ -1,0 +1,47 @@
+﻿@page
+@model E_commerce.Pages.adminpages.SellersModel
+
+@{
+    ViewData["Title"] = "Sellers List";
+}
+
+<h1>@ViewData["Title"]</h1>
+<form method="get" asp-page="AdminHome">
+    <button type="submit" class="btn btn-primary mb-2 w-100">AdminHome</button>
+</form>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Phone Number</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Pin Code</th>
+            <th>Shop Name</th>
+            <th>Verified</th>
+            <th>Action</th>  <!-- New Action column -->
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var seller in Model.SellersList)
+        {
+            <tr>
+                <td>@seller.Id</td>
+                <td>@seller.Name</td>
+                <td>@seller.PhoneNumber</td>
+                <td>@seller.Email</td>
+                <td>@seller.Address</td>
+                <td>@seller.PinCode</td>
+                <td>@seller.ShopName</td>
+                <td>@(seller.IsVerified ? "Yes" : "No")</td>
+                <td>
+                    <form method="post" asp-page-handler="Delete" asp-route-id="@seller.Id">
+                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -9,43 +9,67 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = E_commerce
 build_property.RootNamespace = E_commerce
-build_property.ProjectDir = C:\Users\HP\source\repos\E-commerce\
+build_property.ProjectDir = C:\MyProject\E-commerce\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\HP\source\repos\E-commerce
+build_property.MSBuildProjectDirectory = C:\MyProject\E-commerce
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/HP/source/repos/E-commerce/Pages/Error.cshtml]
+[C:/MyProject/E-commerce/Pages/adminpages/AdminHome.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5wYWdlc1xBZG1pbkhvbWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/MyProject/E-commerce/Pages/adminpages/AdminLogin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5wYWdlc1xBZG1pbkxvZ2luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/MyProject/E-commerce/Pages/adminpages/Products.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5wYWdlc1xQcm9kdWN0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/MyProject/E-commerce/Pages/adminpages/SellerAuthentication.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5wYWdlc1xTZWxsZXJBdXRoZW50aWNhdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/MyProject/E-commerce/Pages/adminpages/Sellers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5wYWdlc1xTZWxsZXJzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/MyProject/E-commerce/Pages/adminpages/Users.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYWRtaW5wYWdlc1xVc2Vycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/MyProject/E-commerce/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/source/repos/E-commerce/Pages/Index.cshtml]
+[C:/MyProject/E-commerce/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/source/repos/E-commerce/Pages/Privacy.cshtml]
+[C:/MyProject/E-commerce/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/source/repos/E-commerce/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[C:/MyProject/E-commerce/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/source/repos/E-commerce/Pages/userpages/UserHome.cshtml]
+[C:/MyProject/E-commerce/Pages/userpages/UserHome.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdXNlcnBhZ2VzXFVzZXJIb21lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/source/repos/E-commerce/Pages/_ViewImports.cshtml]
+[C:/MyProject/E-commerce/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/source/repos/E-commerce/Pages/_ViewStart.cshtml]
+[C:/MyProject/E-commerce/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/source/repos/E-commerce/Pages/Shared/_Layout.cshtml]
+[C:/MyProject/E-commerce/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-awtf9lwkj1
