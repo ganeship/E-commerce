@@ -11,6 +11,12 @@ namespace E_commerce.Pages.viewmodelclasses
         [Required]
         public string Email { get; set; }
 
+        [Required,MaxLength(15),MinLength(6)]
+        public string Password {  get; set; }
+        
+        [Required,MaxLength(15),MinLength(6)]
+        public string PasswordConfirmed {  get; set; }
+
         [Required]
         public string Address { get; set; }
 
