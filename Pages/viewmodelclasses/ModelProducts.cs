@@ -27,9 +27,9 @@ namespace E_commerce.Pages.viewmodelclasses
 
         public int IsActive { get; set; } = 1;
 
-        public string ImagePath1 { get; set; }
-        public string? ImagePath2 { get; set; }
-        public string? ImagePath3 { get; set; }
-        public string? ImagePath4 { get; set; }
+        public IFormFile? Image1{ get; set; }
+        public IFormFile? Image2 { get; set; }
+        public IFormFile? Image3 { get; set; }
+        public IFormFile? Image4 { get; set; }
     }
 }
