@@ -5,63 +5,82 @@
     ViewData["Title"] = "Users List";
 }
 
-<h1>@ViewData["Title"]</h1>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12">
+            
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h1>@ViewData["Title"]</h1>
+                <form method="get" asp-page="AdminHome">
+                    <button type="submit" class="btn btn-outline-primary">
+                        <i class="bi bi-house-door"></i> Admin Home
+                    </button>
+                </form>
+            </div>
 
-<form method="get" asp-page="AdminHome">
-    <button type="submit" class="btn btn-primary mb-2 w-100">AdminHome</button>
-</form>
-
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Phone Number</th>
-            <th>Gender</th>
-            <th>Address</th>
-            <th>Pincode</th>
-            <th>Status</th>
-            <th>Action</th> <!-- Action column for the delete button -->
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var user in Model.UserList)
-        {
-            <tr>
-                <td>@user.Id</td>
-                <td>@user.Name</td>
-                <td>@user.Email</td>
-                <td>@user.PhoneNumber</td>
-                <td>@user.Gender</td>
-                <td>
-                    @if (!string.IsNullOrEmpty(user.Address1))
-                    {
-                        <p>@user.Address1</p>
-                    }
-                    @if (!string.IsNullOrEmpty(user.Address2))
-                    {
-                        <p>@user.Address2</p>
-                    }
-                </td>
-                <td>
-                    @if (user.pincode1.HasValue)
-                    {
-                        <p>@user.pincode1</p>
-                    }
-                    @if (user.pincode2.HasValue)
-                    {
-                        <p>@user.pincode2</p>
-                    }
-                </td>
-                <td>@(user.isactive ? "Active" : "Inactive")</td>
-                <td>
-  
-                    <form method="post" asp-page-handler="Delete" asp-route-id="@user.Id" onsubmit="return confirm('Are you sure you want to delete this user?');">
-                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                    </form>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <table class="table table-hover table-striped table-bordered">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Gender</th>
+                                <th>Address</th>
+                                <th>Pincode</th>
+                                <th>Status</th>
+                                <th>Action</th> 
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var user in Model.UserList)
+                            {
+                                <tr>
+                                    <td>@user.Id</td>
+                                    <td>@user.Name</td>
+                                    <td>@user.Email</td>
+                                    <td>@user.PhoneNumber</td>
+                                    <td>@user.Gender</td>
+                                    <td>
+                                        @if (!string.IsNullOrEmpty(user.Address1))
+                                        {
+                                            <p>@user.Address1</p>
+                                        }
+                                        @if (!string.IsNullOrEmpty(user.Address2))
+                                        {
+                                            <p>@user.Address2</p>
+                                        }
+                                    </td>
+                                    <td>
+                                        @if (user.pincode1.HasValue)
+                                        {
+                                            <p>@user.pincode1</p>
+                                        }
+                                        @if (user.pincode2.HasValue)
+                                        {
+                                            <p>@user.pincode2</p>
+                                        }
+                                    </td>
+                                    <td>
+                                        <span class="badge @(user.isactive ? "bg-success" : "bg-danger")">
+                                            @(user.isactive ? "Active" : "Inactive")
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <form method="post" asp-page-handler="Delete" asp-route-id="@user.Id" onsubmit="return confirm('Are you sure you want to delete this user?');">
+                                            <button type="submit" class="btn btn-danger btn-sm">
+                                                <i class="bi bi-trash"></i> Delete
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

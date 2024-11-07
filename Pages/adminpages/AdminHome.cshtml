@@ -2,26 +2,46 @@
 @model E_commerce.Pages.adminpages.AdminHomeModel
 @{
 }
-<div class="row">
-    <div class="col-3 d-flex flex-column">
-        <h2>Admin Options</h2>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6">
+            <div class="card shadow-lg">
+                <div class="card-header bg-primary text-white text-center">
+                    <h2>Admin Dashboard</h2>
+                    <p class="lead">Manage your BazaarBox E-platform</p>
+                </div>
+                <div class="card-body">
+                    <div class="list-group">
+                        <form method="get" asp-page="/adminpages/Sellers">
+                            <button type="submit" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center mb-2 btn btn-outline-primary">
+                                <span>Sellers</span>
+                                <i class="bi bi-shop-window"></i>
+                            </button>
+                        </form>
 
-        
-        <form method="get" asp-page="/adminpages/Sellers">
-            <button type="submit" class="btn btn-primary mb-2 w-100">Sellers</button>
-        </form>
+                        <form method="get" asp-page="/adminpages/Users">
+                            <button type="submit" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center mb-2 btn btn-outline-success">
+                                <span>Users</span>
+                                <i class="bi bi-person"></i>
+                            </button>
+                        </form>
 
-        <form method="get" asp-page="/adminpages/Users">
-            <button type="submit" class="btn btn-primary mb-2 w-100">Users</button>
-        </form>
+                        <form method="get" asp-page="/adminpages/Products">
+                            <button type="submit" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center mb-2 btn btn-outline-warning">
+                                <span>Products</span>
+                                <i class="bi bi-box"></i>
+                            </button>
+                        </form>
 
-        <form method="get" asp-page="/adminpages/Products">
-            <button type="submit" class="btn btn-primary mb-2 w-100">Products</button>
-        </form>
-
-        <form method="get" asp-page="/adminpages/SellerAuthentication">
-            <button type="submit" class="btn btn-primary mb-2 w-100">Seller Authentication</button>
-        </form>
-
+                        <form method="get" asp-page="/adminpages/SellerAuthentication">
+                            <button type="submit" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center mb-2 btn btn-outline-info">
+                                <span>Seller Authentication</span>
+                                <i class="bi bi-shield-lock"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

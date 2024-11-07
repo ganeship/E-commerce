@@ -5,56 +5,82 @@
     ViewData["Title"] = "Seller Authentication";
 }
 
-<h2>@ViewData["Title"]</h2>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12">
+           
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2>@ViewData["Title"]</h2>
+                <form method="get" asp-page="AdminHome">
+                    <button type="submit" class="btn btn-outline-primary">
+                        <i class="bi bi-house-door"></i> Admin Home
+                    </button>
+                </form>
+            </div>
 
-<form method="get" asp-page="AdminHome">
-    <button type="submit" class="btn btn-primary mb-2 w-100">AdminHome</button>
-</form>
-
-
-@if (Model.SellersList != null && Model.SellersList.Count > 0)
-{
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>Seller Name</th>
-                <th>Phone Number</th>
-                <th>Email</th>
-                <th>Address</th>
-                <th>Pin Code</th>
-                <th>Shop Name</th>
-                <th>Verified</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var seller in Model.SellersList)
+           
+            @if (Model.SellersList != null && Model.SellersList.Count > 0)
             {
-                <tr>
-                    <td>@seller.Name</td>
-                    <td>@seller.PhoneNumber</td>
-                    <td>@seller.Email</td>
-                    <td>@seller.Address</td>
-                    <td>@seller.PinCode</td>
-                    <td>@seller.ShopName</td>
-                    <td>@(seller.IsVerified ? "Verified" : "Not Verified")</td>
-                    <td>
-                        <form method="post" asp-page-handler="Verify" style="display:inline;">
-                            <input type="hidden" name="sellerId" value="@seller.Id" />
-                            <button type="submit" class="btn btn-primary">Verify</button>
-                        </form>
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <table class="table table-hover table-striped table-bordered">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Seller Name</th>
+                                    <th>Phone Number</th>
+                                    <th>Email</th>
+                                    <th>Address</th>
+                                    <th>Pin Code</th>
+                                    <th>Shop Name</th>
+                                    <th>Verified</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var seller in Model.SellersList)
+                                {
+                                    <tr>
+                                        <td>@seller.Name</td>
+                                        <td>@seller.PhoneNumber</td>
+                                        <td>@seller.Email</td>
+                                        <td>@seller.Address</td>
+                                        <td>@seller.PinCode</td>
+                                        <td>@seller.ShopName</td>
+                                        <td>
+                                            <span class="badge @(seller.IsVerified ? "bg-success" : "bg-warning")">
+                                                @(seller.IsVerified ? "Verified" : "Not Verified")
+                                            </span>
+                                        </td>
+                                        <td>
+                                           
+                                            <form method="post" asp-page-handler="Verify" style="display:inline;">
+                                                <input type="hidden" name="sellerId" value="@seller.Id" />
+                                                <button type="submit" class="btn btn-success btn-sm" title="Verify Seller">
+                                                    <i class="bi bi-check-circle"></i> Verify
+                                                </button>
+                                            </form>
 
-                        <form method="post" asp-page-handler="Delete" style="display:inline;">
-                            <input type="hidden" name="sellerId" value="@seller.Id" />
-                            <button type="submit" class="btn btn-danger">Delete</button>
-                        </form>
-                    </td>
-                </tr>
+                                          
+                                            <form method="post" asp-page-handler="Delete" style="display:inline;">
+                                                <input type="hidden" name="sellerId" value="@seller.Id" />
+                                                <button type="submit" class="btn btn-danger btn-sm" title="Delete Seller" onsubmit="return confirm('Are you sure you want to delete this seller?');">
+                                                    <i class="bi bi-trash"></i> Delete
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             }
-        </tbody>
-    </table>
-}
-else
-{
-    <p>No unverified sellers found.</p>
-}
+            else
+            {
+                <div class="alert alert-info" role="alert">
+                    No unverified sellers found.
+                </div>
+            }
+        </div>
+    </div>
+</div>

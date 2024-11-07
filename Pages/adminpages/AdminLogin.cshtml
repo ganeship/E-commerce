@@ -4,47 +4,64 @@
 }
 
 <div class="container bg-light py-5">
-    <div class="row">
-     
-        <div class="col-lg-8 col-md-8 text-center d-flex align-items-center justify-content-center">
+    <div class="row justify-content-center">
+
+        
+        <div class="col-lg-6 col-md-8 text-center mb-4">
             <h3><b>Welcome To Admin Login Page</b></h3>
         </div>
 
-        <div class="col-lg-4 col-md-4">
-            <form method="post">
-                <h2>Admin Login</h2>
+       
+        <div class="col-lg-4 col-md-6 col-12">
+            <div class="card shadow-lg">
+                <div class="card-body">
+                    <h4 class="card-title text-center mb-4">Admin Login</h4>
 
-                <div class="mb-3">
-                    <label asp-for="Email" class="form-label"></label>
-                    <input asp-for="Email" class="form-control" />
-                    <span asp-validation-for="Email" class="text-danger"></span>
+
+                    <form method="post">
+                       
+                        <div class="mb-3">
+                            <label asp-for="Email" class="form-label">Email Address</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                                <input asp-for="Email" class="form-control" placeholder="Enter your email" />
+                            </div>
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+
+                        
+                        <div class="mb-3">
+                            <label asp-for="Password" class="form-label">Password</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                                <input asp-for="Password" class="form-control" type="password" placeholder="Enter your password" />
+                            </div>
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+
+                        
+                        <div class="d-flex justify-content-between">
+                            <button type="submit" class="btn btn-primary w-48">Login</button>
+                            <button type="reset" class="btn btn-secondary w-48">Reset</button>
+                        </div>
+
+                       
+                        <div class="text-center mt-3">
+                            <p><a href="#" class="text-decoration-none">Forgot Password?</a></p>
+                        </div>
+                    </form>
+
+                    
+                    @if (TempData["Admin"] != null)
+                    {
+                        <div class="mt-3 alert alert-info">
+                            <h5 class="text-center">@TempData["Admin"]</h5>
+                        </div>
+                    }
+
                 </div>
-
-                <div class="mb-3">
-                    <label asp-for="Password" class="form-label"></label>
-                    <input asp-for="Password" class="form-control" type="password" />
-                    <span asp-validation-for="Password" class="text-danger"></span>
-                </div>
-
-                <div class="d-flex justify-content-between">
-                    <button type="submit" class="btn btn-primary">Login</button>
-                    <button type="reset" class="btn btn-secondary">Reset</button>
-                </div>
-                <br>
-                <p >
-                    <a href="#">Forgot Password?</a>
-                </p>
-            </form>
-
-            <!-- Admin Message (Optional) -->
-            @if (TempData["Admin"] != null)
-            {
-                <div class="mt-3">
-                    <h5>Message: @TempData["Admin"]</h5>
-                </div>
-            }
-
+            </div>
         </div>
+
     </div>
 </div>
-
