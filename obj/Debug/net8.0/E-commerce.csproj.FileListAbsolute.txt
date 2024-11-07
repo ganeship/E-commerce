@@ -131,7 +131,6 @@ C:\Users\HP\source\repos\E-commerce\obj\Debug\net8.0\staticwebassets\msbuild.bui
 C:\Users\HP\source\repos\E-commerce\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.E-commerce.props
 C:\Users\HP\source\repos\E-commerce\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.E-commerce.props
 C:\Users\HP\source\repos\E-commerce\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Users\HP\source\repos\E-commerce\obj\Debug\net8.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\HP\source\repos\E-commerce\obj\Debug\net8.0\scopedcss\bundle\E-commerce.styles.css
 C:\Users\HP\source\repos\E-commerce\obj\Debug\net8.0\scopedcss\projectbundle\E-commerce.bundle.scp.css
 C:\Users\HP\source\repos\E-commerce\obj\Debug\net8.0\E-commerce.csproj.Up2Date
@@ -141,3 +140,5 @@ C:\Users\HP\source\repos\E-commerce\obj\Debug\net8.0\E-commerce.pdb
 C:\Users\HP\source\repos\E-commerce\obj\Debug\net8.0\E-commerce.genruntimeconfig.cache
 C:\Users\HP\source\repos\E-commerce\obj\Debug\net8.0\ref\E-commerce.dll
 C:\Users\HP\source\repos\E-commerce\obj\Debug\net8.0\E-commerce.sourcelink.json
+C:\Users\HP\source\repos\E-commerce\obj\Debug\net8.0\scopedcss\Pages\Shared\_LayoutHome.cshtml.rz.scp.css
+C:\Users\HP\source\repos\E-commerce\obj\Debug\net8.0\scopedcss\Pages\Shared\_LayoutUser.cshtml.rz.scp.css

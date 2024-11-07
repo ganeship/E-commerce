@@ -10,6 +10,8 @@
   <ItemGroup>
     <Folder Include="Pages\adminpages\" />
     <Folder Include="Pages\sellerpages\" />
+    <Folder Include="wwwroot\Images\Products\" />
+    <Folder Include="wwwroot\Images\Users\" />
   </ItemGroup>
 
   <ItemGroup>
