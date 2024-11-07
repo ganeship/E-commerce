@@ -1,1 +1,54 @@
-﻿.vs/
+﻿# Compiled source files
+bin/
+obj/
+out/
+
+# Visual Studio Files
+.vs/
+.vscode/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Auto-generated files
+GeneratedFiles/
+
+# Logs and databases
+*.log
+*.ldf
+*.mdf
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Build directories
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Rider project files
+.idea/
+*.sln.iml
+
+# JetBrains Rider specific
+.idea/
+
+# Backup files
+*.bak
+*.swp
+
+# NuGet Packages
+*.nupkg
+packages/
+!packages/build/
+
+# Resharper files
+_ReSharper*/
+
+# Static files generated for client-side
+node_modules/
+dist/

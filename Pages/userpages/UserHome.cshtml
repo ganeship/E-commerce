@@ -12,47 +12,63 @@
     <div class="row">
         <!-- Side Navigation Bar -->
         <nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
-            <form method="get">
+            
                 <div class="position-sticky">
-                    <h4>Filters</h4>
+                    
 
-                    <div class="mb-3">
-                        <button type="submit" name="category" value="Category1" class="btn btn-outline-primary w-100 mb-2">
-                            Category 1
-                        </button>
-                        <div class="dropdown">
-                            <button  class="btn btn-secondary dropdown-toggle w-100" type="submit" data-bs-toggle="dropdown" asp->
-                                Category1
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><button type="submit" name="subcategory" value="Subcategory1" class="dropdown-item">Subcategory 1</button></li>
-                                <li><button type="submit" name="subcategory" value="Subcategory2" class="dropdown-item">Subcategory 2</button></li>
-                            </ul>
-                        </div>
-                    </div>
+                <form method="post" asp-page-handler="Filter" >
+                    <button type="submit" class="btn btn-outline-dark w-100 mb-2">Home</button>
+                </form>
+                <h4>Filters</h4><br />
 
-                    <div class="mb-3">
-                        <button type="submit" name="category" value="Category2" class="btn btn-outline-primary w-100 mb-2">
-                            Category 2
-                        </button>
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle w-100" type="button" data-bs-toggle="dropdown">
-                                Subcategories
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><button type="submit" name="subcategory" value="Subcategory3" class="dropdown-item">Subcategory 3</button></li>
-                                <li><button type="submit" name="subcategory" value="Subcategory4" class="dropdown-item">Subcategory 4</button></li>
-                            </ul>
-                        </div>
+                <h5>Categories</h5>
+
+                <button class="btn btn-outline-primary w-100 mb-2" data-bs-toggle="collapse" data-bs-target="#collapse-Categories" aria-expanded="false" aria-controls="collapse-Categories">
+                    Categories
+                </button>
+                <div class="collapse" id="collapse-Categories">
+                    <div class="dropdown">
+                        @foreach (var category in Model.categorySubcategoryGroups)
+                        {    
+                            <form method="post" asp-page-handler="Filter" asp-route-category="@category.Key" >
+                                <button type="submit" class="dropdown-item w-100">@category.Key</button>
+                            </form>
+                        }
                     </div>
                 </div>
-            </form>
+                <br />
+
+                <h5>Sub Categories</h5>
+                @foreach (var category in Model.categorySubcategoryGroups)
+                {   <form method="post" asp-page-handler="Filter" asp-route-category="@category.Key">
+                        <button class="btn btn-outline-primary w-100 mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-@category.Key" aria-expanded="false" aria-controls="collapse-@category.Key">
+                            @category.Key
+                        </button>
+                    </form>
+                    
+
+                    <!-- Subcategory Dropdown for each Category -->
+                    <div class="collapse" id="collapse-@category.Key">
+                        <div class="dropdown">
+                            @foreach (var subcategory in category.Value)
+                            {
+                                <!-- Subcategory Button -->
+                                <form method="post" asp-page-handler="Filter" asp-route-category="@category.Key" asp-route-subcategory="@subcategory">
+                                    <button type="submit" class="dropdown-item w-100">@subcategory</button>
+                                </form>
+                            }
+                        </div>
+                    </div>
+                }
+                
+            </div>
+
         </nav>
 
         <!-- Main Content Area -->
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             <div class="row">
-                @foreach (var product in Model.Products)
+                @foreach (var product in Model.filterproducts)
                 {
                     <div class="col-md-4 mb-4">
                         <div class="card h-100" onclick="window.location.href='/product/details/@product.Id';" style="cursor: pointer;">
