@@ -1,4 +1,71 @@
 ﻿@page
 @model E_commerce.Pages.userpages.UserHomeModel
 @{
+    Layout = "_LayoutUser";
 }
+@{
+    
+}
+
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- Side Navigation Bar -->
+        <nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+            <form method="get">
+                <div class="position-sticky">
+                    <h4>Filters</h4>
+
+                    <div class="mb-3">
+                        <button type="submit" name="category" value="Category1" class="btn btn-outline-primary w-100 mb-2">
+                            Category 1
+                        </button>
+                        <div class="dropdown">
+                            <button  class="btn btn-secondary dropdown-toggle w-100" type="submit" data-bs-toggle="dropdown" asp->
+                                Category1
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><button type="submit" name="subcategory" value="Subcategory1" class="dropdown-item">Subcategory 1</button></li>
+                                <li><button type="submit" name="subcategory" value="Subcategory2" class="dropdown-item">Subcategory 2</button></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <button type="submit" name="category" value="Category2" class="btn btn-outline-primary w-100 mb-2">
+                            Category 2
+                        </button>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle w-100" type="button" data-bs-toggle="dropdown">
+                                Subcategories
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><button type="submit" name="subcategory" value="Subcategory3" class="dropdown-item">Subcategory 3</button></li>
+                                <li><button type="submit" name="subcategory" value="Subcategory4" class="dropdown-item">Subcategory 4</button></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <div class="row">
+                @foreach (var product in Model.Products)
+                {
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100" onclick="window.location.href='/product/details/@product.Id';" style="cursor: pointer;">
+                            <img src="@(product.ImagePath1 ?? "default-image.jpg")" class="card-img-top" alt="Product Image">
+                            <div class="card-body">
+                                <h5 class="card-title">@product.ProductName</h5>
+                                <p class="card-text">@product.Description</p>
+                                <p class="card-text"><strong>Price: $@product.Price</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </main>
+    </div>
+</div>

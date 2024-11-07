@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "+5AZdn1X3DhHZuv5noODzsJvGazxNbuTvc6Wjzqxnk8=",
+  "Hash": "PlSUx/B3TfoNjIV7kfMlIWQKIxarK0gSU3/J3VDf+c4=",
   "Source": "E-commerce",
   "BasePath": "_content/E-commerce",
   "Mode": "Default",
@@ -91,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\HP\\source\\repos\\E-commerce\\wwwroot\\Images\\Users\\13c9c3c9-84db-481d-a570-92f50a21caa8.jpg",
+      "SourceId": "E-commerce",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\HP\\source\\repos\\E-commerce\\wwwroot\\",
+      "BasePath": "_content/E-commerce",
+      "RelativePath": "Images/Users/13c9c3c9-84db-481d-a570-92f50a21caa8.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Users\\13c9c3c9-84db-481d-a570-92f50a21caa8.jpg"
     },
     {
       "Identity": "C:\\Users\\HP\\source\\repos\\E-commerce\\wwwroot\\js\\site.js",

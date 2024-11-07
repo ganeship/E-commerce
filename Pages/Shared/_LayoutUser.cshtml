@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Http 
+@{
+    var username = Context.Session.GetString("UserName");
+}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -32,17 +36,22 @@
                         </li>
                         <!-- Login button with dropdown -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="loginDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Login
+                            <a class="nav-link dropdown-toggle" href="~/userpages/UserLogin" id="UserDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              @username
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="loginDropdown">
-                                <li><a class="dropdown-item" href="#">UserLogin</a></li>
-                                <li><a class="dropdown-item" href="#">UserSignUp</a></li>
+                                <li><a class="dropdown-item" href="~/userpages/profile">Profile</a></li>
+                                <li><a class="dropdown-item" href="~/userpages/orders">Orders</a></li>
+                                <li><a class="dropdown-item" href="#">Gifts</a></li>
+                                <form  method="post" asp-page-handler="signout">
+                                <li><button type="submit" class="dropdown-item" >signout</button></li>
+                                </form>
+                                
                             </ul>
                         </li>
                         <!-- Cart icon -->
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="~/userpages/cart">
                                 <i class="fa fa-shopping-cart" style="font-size:24px">Cart</i>
 
                             </a>
@@ -52,8 +61,9 @@
                                 <i class="fa-solid fa-shop" style="font-size: 24px;">Become a seller</i>
                             </a>
                         </li>
-
                         
+
+
                     </ul>
                 </div>
             </div>

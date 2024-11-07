@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\E-commerce.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\HP\\source\\repos\\E-commerce\\wwwroot\\Images\\Users\\13c9c3c9-84db-481d-a570-92f50a21caa8.jpg",
+      "PackagePath": "staticwebassets\\Images\\Users\\13c9c3c9-84db-481d-a570-92f50a21caa8.jpg"
+    },
+    {
       "Id": "C:\\Users\\HP\\source\\repos\\E-commerce\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
