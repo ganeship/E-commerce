@@ -27,7 +27,11 @@ namespace E_commerce.Pages.viewmodelclasses
 
         public int IsActive { get; set; } = 1;
 
+<<<<<<< HEAD
         public IFormFile? Image1{ get; set; }
+=======
+        public IFormFile Image1 { get; set; }
+>>>>>>> 559b3993f4e204ea5c8cc313f215e106eac919c3
         public IFormFile? Image2 { get; set; }
         public IFormFile? Image3 { get; set; }
         public IFormFile? Image4 { get; set; }

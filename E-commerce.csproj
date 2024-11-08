@@ -9,6 +9,12 @@
 
   <ItemGroup>
     <Folder Include="Pages\adminpages\" />
+<<<<<<< HEAD
+=======
+    <Folder Include="Pages\sellerpages\" />
+    <Folder Include="wwwroot\Images\Products\" />
+    <Folder Include="wwwroot\Images\Users\" />
+>>>>>>> 559b3993f4e204ea5c8cc313f215e106eac919c3
   </ItemGroup>
 
   <ItemGroup>

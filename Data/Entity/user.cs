@@ -25,12 +25,12 @@ namespace E_commerce.Data.Entity
 
         public string? Address1 {  get; set; }
 
-        [MaxLength(6)]
+        [Range(100000,999999)]
         public int? pincode1 { get; set; }
 
         public string? Address2 {  get; set; }
 
-        [MaxLength(6)]
+        [Range(100000, 999999)]
         public int? pincode2 { get; set; }
 
         public bool isactive { get; set; } = true;

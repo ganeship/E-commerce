@@ -42,12 +42,32 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2VsbGVycGFnZXNcU2VsbGVyU2lnblVwLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/HP/OneDrive/Desktop/Ecommerce/E-commerce/Pages/Shared/_Layoutcredentials.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXRjcmVkZW50aWFscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/HP/OneDrive/Desktop/Ecommerce/E-commerce/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/HP/OneDrive/Desktop/Ecommerce/E-commerce/Pages/userpages/cart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdXNlcnBhZ2VzXGNhcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/HP/OneDrive/Desktop/Ecommerce/E-commerce/Pages/userpages/UserHome.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdXNlcnBhZ2VzXFVzZXJIb21lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/OneDrive/Desktop/Ecommerce/E-commerce/Pages/userpages/UserLogin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdXNlcnBhZ2VzXFVzZXJMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/OneDrive/Desktop/Ecommerce/E-commerce/Pages/userpages/UserSignup.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdXNlcnBhZ2VzXFVzZXJTaWdudXAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/OneDrive/Desktop/Ecommerce/E-commerce/Pages/userpages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdXNlcnBhZ2VzXF9WaWV3U3RhcnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/HP/OneDrive/Desktop/Ecommerce/E-commerce/Pages/_ViewImports.cshtml]
@@ -58,6 +78,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HP/OneDrive/Desktop/Ecommerce/E-commerce/Pages/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-awtf9lwkj1
+[C:/Users/HP/OneDrive/Desktop/Ecommerce/E-commerce/Pages/Shared/_LayoutHome.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXRIb21lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-zonhbuxat2
+
+[C:/Users/HP/OneDrive/Desktop/Ecommerce/E-commerce/Pages/Shared/_LayoutUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXRVc2VyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-8h385se83y
