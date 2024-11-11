@@ -1,91 +1,76 @@
-﻿@page
-@model E_commerce.Pages.Sellerpages.AddProductModel
-@{
-}
-<h1>@ViewData["Title"]</h1>
 
+
+ @page
+@model E_commerce.Pages.Sellerpages.AddProductModel
+
+<h1>Add Product</h1>
 
 <div class="container">
-    <div class="row">
-        <div class="col-lg-2 col-md-4">
+    <form method="post" enctype="multipart/form-data">
+        <div>
+            <label asp-for="SellerProduct.ProductId"></label>
+            <input asp-for="SellerProduct.ProductId" class="form-control">
+            <span asp-validation-for="SellerProduct.ProductId" class="text-danger"></span>
         </div>
 
-        <div class="col-lg-6 col-md-6">
+        <div>
+            <label asp-for="SellerProduct.ProductName"></label>
+            <input asp-for="SellerProduct.ProductName" class="form-control">
+            <span asp-validation-for="SellerProduct.ProductName" class="text-danger"></span>
         </div>
 
-        <div class="col-lg-4 col-md-2 ">
-
-            <form method="post" enctype="multipart/form-data">
-                <div>
-                    <label asp-for="seller1.ProductId"></label>
-                    <input asp-for="seller1.ProductId" class="form-control">
-                    <span asp-validation-for="seller1.ProductId" class="text-danger"></span>
-
-                </div>
-
-
-                <div>
-                    <label asp-for="seller1.ProductName"></label>
-                    <input asp-for="seller1.ProductName" class="form-control">
-                    <span asp-validation-for="seller1.ProductName" class="text-danger"></span>
-
-                </div>
-                <div>
-                    <label asp-for="seller1.Description"></label>
-                    <input asp-for="seller1.Description" class="form-control">
-                    <span asp-validation-for="seller1.Description" class="text-danger"></span>
-
-                </div>
-                <div>
-                    <label asp-for="seller1.Category"></label>
-                    <input asp-for="seller1.Category" class="form-control">
-                    <span asp-validation-for="seller1.Category" class="text-danger"></span>
-
-                </div>
-                <div>
-                    <label asp-for="seller1.SubCategory"></label>
-                    <input asp-for="seller1.SubCategory" class="form-control">
-                    <span asp-validation-for="seller1.SubCategory" class="text-danger"></span>
-
-                </div>
-                <div>
-                    <label asp-for="seller1.Price"></label>
-                    <input asp-for="seller1.Price" class="form-control">
-                    <span asp-validation-for="seller1.Price" class="text-danger"></span>
-
-                </div>
-                <div>
-                    <label asp-for="seller1.Quantity"></label>
-                    <input asp-for="seller1.Quantity" class="form-control">
-                    <span asp-validation-for="seller1.Quantity" class="text-danger"></span>
-
-                </div>
-                <div>
-                    <label>Image 1</label>
-                    <input type="file" asp-for="seller1.Image1" class="form-control">
-                </div>
-
-                <div>
-                    <label>Image 2</label>
-                    <input type="file" asp-for="seller1.Image2" class="form-control">
-                </div>
-
-                <div>
-                    <label>Image 3</label>
-                    <input type="file" asp-for="seller1.Image3" class="form-control">
-                </div>
-
-                <div>
-                    <label>Image 4</label>
-                    <input type="file" asp-for="seller1.Image4" class="form-control">
-                </div>
-
-                <br />
-                
-                <button type="submit" style="color:aqua">Add</button>
-            </form>
+        <div>
+            <label asp-for="SellerProduct.Description"></label>
+            <input asp-for="SellerProduct.Description" class="form-control">
+            <span asp-validation-for="SellerProduct.Description" class="text-danger"></span>
         </div>
-    </div>
+
+        <div>
+            <label asp-for="SellerProduct.Category"></label>
+            <input asp-for="SellerProduct.Category" class="form-control">
+            <span asp-validation-for="SellerProduct.Category" class="text-danger"></span>
+        </div>
+
+        <div>
+            <label asp-for="SellerProduct.SubCategory"></label>
+            <input asp-for="SellerProduct.SubCategory" class="form-control">
+            <span asp-validation-for="SellerProduct.SubCategory" class="text-danger"></span>
+        </div>
+
+        <div>
+            <label asp-for="SellerProduct.Price"></label>
+            <input asp-for="SellerProduct.Price" class="form-control">
+            <span asp-validation-for="SellerProduct.Price" class="text-danger"></span>
+        </div>
+
+        <div>
+            <label asp-for="SellerProduct.Quantity"></label>
+            <input asp-for="SellerProduct.Quantity" class="form-control">
+            <span asp-validation-for="SellerProduct.Quantity" class="text-danger"></span>
+        </div>
+
+        <!-- Image Uploads -->
+        <div>
+            <label>Image 1</label>
+            <input type="file" asp-for="SellerProduct.Image1" class="form-control">
+        </div>
+
+        <div>
+            <label>Image 2</label>
+            <input type="file" asp-for="SellerProduct.Image2" class="form-control">
+        </div>
+
+        <div>
+            <label>Image 3</label>
+            <input type="file" asp-for="SellerProduct.Image3" class="form-control">
+        </div>
+
+        <div>
+            <label>Image 4</label>
+            <input type="file" asp-for="SellerProduct.Image4" class="form-control">
+        </div>
+
+        <br />
+        <button type="submit" class="btn btn-primary">Add</button>
+    </form>
 </div>
-
-

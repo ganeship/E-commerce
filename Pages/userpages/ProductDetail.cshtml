@@ -1,0 +1,53 @@
+﻿ @page
+@model E_commerce.Pages.userpages.ProductDetailModel
+
+@{
+    ViewData["Title"] = "Product Details";
+}
+
+<h1>@Model.Product.ProductName</h1>
+
+<div class="product-detail">
+    <div class="product-images">
+       
+        @if (!string.IsNullOrEmpty(Model.Product.ImagePath1))
+        {
+            <img src="~/Images/Users/ImagePath1" alt="Product Image 1" class="product-image" />
+        }
+
+        
+        @if (!string.IsNullOrEmpty(Model.Product.ImagePath2))
+        {
+            <img src="@Model.Product.ImagePath2" alt="Product Image 2" class="product-image" />
+        }
+
+       
+        @if (!string.IsNullOrEmpty(Model.Product.ImagePath3))
+        {
+            <img src="@Model.Product.ImagePath3" alt="Product Image 3" class="product-image" />
+        }
+
+       
+        @if (!string.IsNullOrEmpty(Model.Product.ImagePath4))
+        {
+            <img src="@Model.Product.ImagePath4" alt="Product Image 4" class="product-image" />
+        }
+    </div>
+
+    <div class="product-details">
+        <p><strong>Price:</strong> ₹@Model.Product.Price</p>
+        <p><strong>Description:</strong> @Model.Product.Description</p>
+        <p><strong>Category:</strong> @Model.Product.Category</p>
+        <p><strong>SubCategory:</strong> @Model.Product.SubCategory</p>
+
+        <form method="post">
+            <label for="quantity">Quantity:</label>
+            <input type="number" name="Quantity" value="1" min="1" />
+            <button type="submit" class="btn btn-primary">Add to Cart</button>
+        </form>
+    </div>
+</div>
+
+<script src="~/js/AddToCart.js"></script>
+
+     

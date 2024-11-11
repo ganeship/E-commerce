@@ -63,6 +63,8 @@ namespace E_commerce.Pages.userpages
                     Email = signuppage.Email,
                     Address1 = signuppage.Address1,
                     Address2 = signuppage.Address2,
+                    pincode1 = signuppage.Pincode1,
+                    pincode2 = signuppage.Pincode2,
                     pincode1 = signuppage.pincode1,
                     pincode2 = signuppage.pincode2,
                     Gender = signuppage.Gender,

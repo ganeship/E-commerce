@@ -1,14 +1,13 @@
 ﻿@page
-@model E_commerce.Pages.userpages.cartModel
-
+@model E_commerce.Pages.userpages.CheckoutModel
 @{
-    ViewData["Title"] = "Shopping Cart";
+    ViewData["Title"] = "Checkout";
 }
 
-<h1>Your Shopping Cart</h1>
+<h1>Checkout</h1>
 
-@if (Model.CartItems != null && Model.CartItems.Any())
-{
+<form method="post">
+    <h2>Order Summary</h2>
     <table class="table">
         <thead>
             <tr>
@@ -25,16 +24,12 @@
                     <td>@item.Product.ProductName</td>
                     <td>₹@item.Product.Price</td>
                     <td>@item.Quantity</td>
-                    <td>₹@item.Quantity * item.Product.Price</td>
+                        <td>₹@(item.Quantity * Convert.ToDecimal(item.Product.Price))</td>
+
                 </tr>
             }
         </tbody>
     </table>
 
-    <button class="btn btn-success">Proceed to Checkout</button>
-}
-else
-{
-    <p>Your cart is empty!</p>
-}
-
+    <button type="submit" class="btn btn-success">Place Order</button>
+</form>
