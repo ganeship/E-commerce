@@ -15,6 +15,12 @@ namespace E_commerce
             // Add services to the container.
             builder.Services.AddRazorPages();
 
+            builder.Services.AddSession(option =>
+            {
+                option.IdleTimeout = TimeSpan.FromMinutes(60);
+            }
+            );
+
             builder.Services.AddDbContext<DBcontext>(options =>
             {
                 string Connectionstring = builder.Configuration.GetConnectionString("DefaultConnection")!;
@@ -34,6 +40,7 @@ namespace E_commerce
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseSession();
 
             app.UseRouting();
 

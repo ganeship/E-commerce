@@ -5,11 +5,15 @@ namespace E_commerce.Data.Entity
 {
     public class product
     {
-        [Key] public int Id { get; set; }
+        [Key] 
+        public int Id { get; set; }
+
         [Required]
         public int ProductId { get; set; }
+
         [Required]
         public string ProductName { get; set; }
+
         [Required]
         public string Description { get; set; }
         [Required]

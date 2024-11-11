@@ -7,15 +7,11 @@
     <RootNamespace>E_commerce</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="Pages\adminpages\**" />
-    <Compile Remove="Pages\sellerpages\**" />
-    <Content Remove="Pages\adminpages\**" />
-    <Content Remove="Pages\sellerpages\**" />
-    <EmbeddedResource Remove="Pages\adminpages\**" />
-    <EmbeddedResource Remove="Pages\sellerpages\**" />
-    <None Remove="Pages\adminpages\**" />
-    <None Remove="Pages\sellerpages\**" />
+  <ItemGroup>   
+    <Folder Include="Pages\adminpages\" />
+    <Folder Include="Pages\sellerpages\" />
+    <Folder Include="wwwroot\Images\Products\" />
+    <Folder Include="wwwroot\Images\Users\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -185,13 +185,18 @@ namespace E_commerce.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PinCode")
+                    b.Property<string>("PinCode")
+                        .IsRequired()
                         .HasMaxLength(6)
-                        .HasColumnType("int");
+                        .HasColumnType("nvarchar(6)");
 
                     b.Property<string>("ShopName")
                         .IsRequired()

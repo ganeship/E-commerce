@@ -15,9 +15,12 @@ namespace E_commerce.Data.Entity
         public string Email { get; set; }
 
         [Required]
+        public string Password { get; set; }
+
+        [Required]
         public string Address { get; set; }
 
-        [Required,MaxLength(6)] public int PinCode { get; set; }
+        [Required,MaxLength(6)] public string PinCode { get; set; }
 
         [Required]
         public string? ShopName { get; set; }

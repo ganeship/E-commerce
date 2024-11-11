@@ -1,9 +1,11 @@
-/*using E_commerce.Data.Context;
+using E_commerce.Data.Context;
 using E_commerce.Data.Entity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace E_commerce.Pages.userpages
 {
@@ -96,6 +98,11 @@ namespace E_commerce.Pages.userpages
         {
             public product Product { get; set; }
             public int Quantity { get; set; }
+
+        public void OnGet()
+        {
         }
     }
+}
+
 }
