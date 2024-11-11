@@ -65,8 +65,6 @@ namespace E_commerce.Pages.userpages
                     Address2 = signuppage.Address2,
                     pincode1 = signuppage.Pincode1,
                     pincode2 = signuppage.Pincode2,
-                    pincode1 = signuppage.pincode1,
-                    pincode2 = signuppage.pincode2,
                     Gender = signuppage.Gender,
                     Password = signuppage.Password,
                     ImagePath = filepath
