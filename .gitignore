@@ -1,54 +1,73 @@
-﻿# Compiled source files
-bin/
-obj/
-out/
-
-# Visual Studio Files
-.vs/
+﻿# Visual Studio files
 .vscode/
+.vs/
+.idea/
 
 # User-specific files
-*.user
+*.rsuser
 *.suo
+*.user
 *.userosscache
 *.sln.docstates
 
-# Auto-generated files
-GeneratedFiles/
-
-# Logs and databases
-*.log
-*.ldf
-*.mdf
-
-# OS-specific files
-.DS_Store
-Thumbs.db
-
 # Build directories
+bin/
+obj/
+
+# ASP.NET Razor Specific Files
+*.db
+*.db-journal
+*.sqlite
+*.sqlite-journal
+
+# Logs
+*.log
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Config files
+appsettings.*.json
+appsettings.json
+secrets.json
+
+# Rider
+.idea/
+
+# Resharper files
+*.DotSettings.user
+
+# NuGet packages
+*.nupkg
+*.snupkg
+packages/
+.nuget/
 project.lock.json
-project.fragment.lock.json
-artifacts/
 
-# Rider project files
-.idea/
-*.sln.iml
+# Mac files
+.DS_Store
 
-# JetBrains Rider specific
-.idea/
+# Publish output
+wwwroot/Uploads/
 
-# Backup files
+# Environment files
+.env
+.env.*
+
+# Logs and debug files
+*.log
 *.bak
 *.swp
 
-# NuGet Packages
-*.nupkg
-packages/
-!packages/build/
+# Azure and deployment artifacts
+.vs/
+.env.*
+.scm/
+.swp
 
-# Resharper files
-_ReSharper*/
-
-# Static files generated for client-side
-node_modules/
-dist/
+# JetBrains Rider files
+.idea/
+.idea/*
