@@ -1,0 +1,17 @@
+﻿@page
+@model E_commerce.Pages.AdminPage.DashboardModel
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<h2>Admin Dashboard</h2>
+
+<div>
+    <h3>Navigate to Details</h3>
+    <div>
+        <a asp-page="/AdminPage/UserDetails" class="btn btn-info">User Details</a>
+        <a asp-page="/AdminPage/SellerDetails" class="btn btn-warning">Seller Details</a>
+        <a asp-page="/AdminPage/OrderDetails" class="btn btn-success">Order Details</a>
+    </div>
+</div>
+

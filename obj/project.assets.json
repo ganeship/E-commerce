@@ -4045,11 +4045,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HP\\source\\repos\\E-commerce\\E-commerce.csproj",
+      "projectUniqueName": "C:\\Users\\HP\\OneDrive\\Desktop\\Ecommerce\\E-commerce\\E-commerce.csproj",
       "projectName": "E-commerce",
-      "projectPath": "C:\\Users\\HP\\source\\repos\\E-commerce\\E-commerce.csproj",
+      "projectPath": "C:\\Users\\HP\\OneDrive\\Desktop\\Ecommerce\\E-commerce\\E-commerce.csproj",
       "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HP\\source\\repos\\E-commerce\\obj\\",
+      "outputPath": "C:\\Users\\HP\\OneDrive\\Desktop\\Ecommerce\\E-commerce\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",

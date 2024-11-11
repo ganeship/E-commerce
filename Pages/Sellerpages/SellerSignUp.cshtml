@@ -1,0 +1,72 @@
+﻿@page
+@model E_commerce.Pages.Sellerpages.SellerSignUpModel
+@{
+}
+<h1>@ViewData["Title"]</h1>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-2 col-md-4">
+        </div>
+
+        <div class="col-lg-6 col-md-6">
+        </div>
+
+        <div class="col-lg-4 col-md-2 ">
+
+            <form method="post">
+                <div>
+                    <label asp-for="user.Name"></label>
+                    <input asp-for="user.Name" class="form-control">
+                    <span asp-validation-for="user.Name" class="text-danger"></span>
+
+                </div>
+                <div>
+                    <label asp-for="user.PhoneNumber"></label>
+                    <input asp-for="user.PhoneNumber" class="form-control">
+                    <span asp-validation-for="user.PhoneNumber" class="text-danger"></span>
+
+                </div>
+
+
+                <div>
+                    <label asp-for="user.Email"></label>
+                    <input asp-for="user.Email" class="form-control">
+                    <span asp-validation-for="user.Email" class="text-danger"></span>
+                </div>
+                <div>
+                    <label asp-for="user.Address"></label>
+                    <input asp-for="user.Address" class="form-control">
+                    <span asp-validation-for="user.Address" class="text-danger"></span>
+                </div>
+                <div>
+                    <label asp-for="user.PinCode "></label>
+                    <input asp-for="user.PinCode " class="form-control">
+                    <span asp-validation-for="user.PinCode " class="text-danger"></span>
+                </div>
+                <div>
+                    <label asp-for="user.ShopName"></label>
+                    <input asp-for="user.ShopName" class="form-control">
+                    <span asp-validation-for="user.ShopName" class="text-danger"></span>
+                </div>
+                <div>
+                    <label asp-for="user.Password"></label>
+                    <input asp-for="user.Password" class="form-control">
+                    <span asp-validation-for="user.Password" class="text-danger"></span>
+                </div>
+                <div>
+                    <label asp-for="user.PasswordConfirmed"></label>
+                    <input asp-for="user.PasswordConfirmed" class="form-control">
+                    <span asp-validation-for="user.PasswordConfirmed" class="text-danger"></span>
+                </div><br />
+
+                <button type="submit">SignUp</button>
+                <button type="Reset" style="color:blue">Reset</button>
+
+            </form>
+
+
+        </div>
+    </div>
+</div>

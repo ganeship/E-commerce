@@ -19,4 +19,6 @@ namespace E_commerce.Pages.viewmodelclasses
         [Required]
         public string? ShopName { get; set; }
     }
+
+
 }

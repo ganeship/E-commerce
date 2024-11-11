@@ -1,0 +1,31 @@
+﻿@page
+@model E_commerce.Pages.AdminPage.OrderDetailsModel
+@{
+    ViewData["Title"] = "Order Details";
+}
+
+<h2>Order Details</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Order Id</th>
+            <th>Product Name</th>
+            <th>User Address</th>
+            <th>Quantity</th>
+            <th>Order Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var order in Model.Orders)
+        {
+            <tr>
+                <td>@order.Id</td>
+                <td>@order.ProductName</td>
+                <td>@order.UserAddress</td>
+                <td>@order.Quantity</td>
+                <td>@order.OrderedDate.ToString("dd-MM-yyyy")</td>
+            </tr>
+        }
+    </tbody>
+</table>

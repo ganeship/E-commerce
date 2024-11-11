@@ -1,0 +1,28 @@
+﻿@page
+@model E_commerce.Pages.Adminpage.AdminLoginModel
+@{
+}
+@if (TempData["Admin"] != null)
+{
+    <div>
+        <h5>Message: @TempData["Admin"]</h5>
+    </div>
+}
+<h3>This is Admin login page</h3>
+
+<form method="post">
+    <div>
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Password"></label>
+        <input asp-for="Password" class="form-control" type="password" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+
+    <br />
+
+    <button type="submit" style="color:white; background-color:black">Login</button>
+</form>

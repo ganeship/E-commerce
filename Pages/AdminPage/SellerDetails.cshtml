@@ -1,0 +1,47 @@
+﻿@page
+@model E_commerce.Pages.AdminPage.SellerDetailsModel
+@{
+    ViewData["Title"] = "Seller Details";
+}
+
+<h2>Seller Details</h2>
+
+@if (HttpContext.Session.GetString("IsAdminLoggedIn") == "true")
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Username</th>
+                <th>Is Verified</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var seller in Model.Sellers)
+            {
+                <tr>
+                    <td>@seller.Id</td>
+                    <td>@seller.Name</td>
+                    <td>@seller.Email</td>
+                    <td>@seller.Name</td>
+                    <td>@(seller.IsVerified ? "Yes" : "No")</td>
+                    <td>
+                        @if (!seller.IsVerified)
+                        {
+                            <form method="post" asp-page-handler="VerifySeller" asp-route-id="@seller.Id">
+                                <button type="submit" class="btn btn-success">Verify</button>
+                            </form>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Please log in to verify sellers.</p>
+}

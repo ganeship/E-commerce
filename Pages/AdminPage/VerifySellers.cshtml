@@ -1,0 +1,44 @@
+﻿@page
+@model E_commerce.Pages.AdminPage.VerifySellersModel
+@{
+    ViewData["Title"] = "Verify Sellers";
+}
+
+<h2>Verify Sellers</h2>
+
+@if (Model.UnverifiedSellers.Count == 0)
+{
+    <p>No unverified sellers found.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Username</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var seller in Model.UnverifiedSellers)
+            {
+                <tr>
+                    <td>@seller.Id</td>
+                    <td>@seller.Name</td>
+                    <td>@seller.Email</td>
+                    <td>@seller.Name</td>
+                    <td>
+                        <form method="post" asp-page-handler="Verify">
+                            <input type="hidden" name="id" value="@seller.Id" />
+                            <button type="submit" class="btn btn-success">Verify</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
