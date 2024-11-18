@@ -1,0 +1,42 @@
+﻿@page
+@model E_commerce.Pages.userpages.UserOrderModel
+@{
+    ViewData["Title"] = "Your Orders";
+}
+
+<h2>Your Orders</h2>
+
+@if (Model.UserOrders.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>Ordered Date</th>
+                <th>Address</th>
+                <th>Review</th> 
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in Model.UserOrders)
+            {
+                <tr>
+                    <td>@order.ProductName</td>
+                    <td>@order.Quantity</td>
+                    <td>@order.OrderedDate.ToString("dd MMM yyyy")</td>
+                    <td>@order.UserAddress</td>
+                    <td>
+                        <form method="post" asp-page="Reviews" asp-route-productId="@order.ProductId">
+                            <button type="submit" class="btn btn-info">Review</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No orders found.</p>
+}

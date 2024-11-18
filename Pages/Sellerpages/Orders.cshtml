@@ -1,0 +1,39 @@
+﻿@page
+@model E_commerce.Pages.SellerPages.OrdersModel
+
+@{
+    ViewData["Title"] = "User Orders";
+}
+
+<h1>Your Product Orders</h1>
+
+@if (Model.SellerOrders.Count == 0)
+{
+    <p>No orders found for your products.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>Ordered Date</th>
+                <th>User ID</th>
+                <th>User Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in Model.SellerOrders)
+            {
+                <tr>
+                    <td>@order.ProductName</td>
+                    <td>@order.Quantity</td>
+                    <td>@order.OrderedDate.ToShortDateString()</td>
+                    <td>@order.UserId</td>
+                    <td>@order.UserAddress</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

@@ -1,12 +1,25 @@
 ﻿@page
 @model E_commerce.Pages.userpages.CheckoutModel
+
 @{
     ViewData["Title"] = "Checkout";
 }
 
 <h1>Checkout</h1>
 
-<form method="post">
+@if (ModelState.ErrorCount > 0)
+{
+    <div class="alert alert-danger">
+        <ul>
+            @foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
+            {
+                <li>@error.ErrorMessage</li>
+            }
+        </ul>
+    </div>
+}
+
+<form method="post" id="checkoutForm">
     <h2>Order Summary</h2>
     <table class="table">
         <thead>
@@ -20,16 +33,64 @@
         <tbody>
             @foreach (var item in Model.CartItems)
             {
-                <tr>
-                    <td>@item.Product.ProductName</td>
-                    <td>₹@item.Product.Price</td>
-                    <td>@item.Quantity</td>
-                        <td>₹@(item.Quantity * Convert.ToDecimal(item.Product.Price))</td>
-
-                </tr>
+                @if (item.Product != null && item.Product.Price != null && item.Quantity > 0)
+                {
+                    <tr>
+                        <td>@item.Product.ProductName</td>
+                        <td>₹@item.Product.Price</td>
+                        <td>
+                            <input type="number" class="form-control quantity" name="quantities[@item.Product.Id]" value="@item.Quantity" min="1" max="@item.Product.Quantity" data-price="@item.Product.Price" data-id="@item.Product.Id" onchange="updateTotal(this)" />
+                        </td>
+                        <td id="total-@item.Product.Id">₹@(item.Quantity * Convert.ToDecimal(item.Product.Price))</td>
+                    </tr>
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="4">Product or Quantity data is missing.</td>
+                    </tr>
+                }
             }
         </tbody>
     </table>
 
+   
+</form>
+<form method="post" asp-page-handler="PlaceOrder">
     <button type="submit" class="btn btn-success">Place Order</button>
 </form>
+
+<script>
+
+    function updateTotal(input) {
+        const quantity = parseInt(input.value);
+        const price = parseFloat(input.getAttribute('data-price'));
+        const totalElement = document.getElementById('total-' + input.getAttribute('data-id'));
+
+       
+        totalElement.textContent = '₹' + (quantity * price).toFixed(2);
+    }
+
+   
+    document.getElementById("checkoutForm").onsubmit = function (event) {
+        let isValid = true;
+        let errorMessage = "";
+
+        const quantities = document.querySelectorAll(".quantity");
+        quantities.forEach(function (input) {
+            const availableStock = parseInt(input.max);
+            const orderedQuantity = parseInt(input.value);
+
+           
+            if (orderedQuantity > availableStock) {
+                isValid = false;
+                errorMessage = `Ordered quantity cannot exceed available stock (${availableStock}) for this product.`;
+            }
+        });
+
+        if (!isValid) {
+            event.preventDefault();  
+            alert(errorMessage); 
+        }
+    };
+</script>

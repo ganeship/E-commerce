@@ -1,0 +1,14 @@
+﻿@page
+@model OrderConfirmationModel
+@{
+    ViewData["Title"] = "Order Confirmation";
+}
+
+<div style="display: flex; justify-content: center; align-items: center; height: 80vh; flex-direction: column; text-align: center; color: blueviolet;">
+    <h1 style="color: royalblue;">Order Confirmation</h1>
+    <p style="font-size: 1.2em; color: #444;">Thank you for your order! Your order ID is @Model.OrderId.</p>
+    <p style="font-size: 1em; color: #555;">We will send a confirmation email with the order details shortly.</p>
+</div>
+
+
+<a asp-page="UserHome">Return to Home</a>

@@ -2,40 +2,52 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.ComponentModel.DataAnnotations;
 
-namespace E_commerce.Pages.Adminpage
+namespace E_commerce.Pages.AdminPage
 {
     public class AdminLoginModel : PageModel
     {
-        // Email property
         [BindProperty]
         [Required(ErrorMessage = "Email is required.")]
         [EmailAddress(ErrorMessage = "Invalid email address.")]
         public string Email { get; set; }
 
-        // Password property
         [BindProperty]
         [Required(ErrorMessage = "Password is required.")]
         public string Password { get; set; }
 
+        public string ErrorMessage { get; set; }
+
         public void OnGet()
         {
-            // Handle GET request if needed (e.g., clearing out any existing session or temp data)
+            
+            HttpContext.Session.Clear();
         }
 
         public IActionResult OnPost()
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                // Add your logic for admin login here.
-                // For example, authenticate the admin based on the Email and Password fields.
-
-                // If login successful, redirect to another page or set TempData message
-                TempData["Admin"] = "Login successful!";
-                return RedirectToPage("/Adminpage/AdminDashboard"); // Example redirect
+                return Page();
             }
 
-            // If login fails, stay on the page and show validation errors
-            return Page();
+            
+            string adminEmail = "admin@example.com";
+            string adminPassword = "admin123";
+
+            if (Email == adminEmail && Password == adminPassword)
+            {
+                
+                HttpContext.Session.SetString("IsAdminLoggedIn", "true");
+
+                
+                return RedirectToPage("Dashboard");
+            }
+            else
+            {
+                
+                ErrorMessage = "Invalid email or password. Please try again.";
+                return Page();
+            }
         }
     }
 }

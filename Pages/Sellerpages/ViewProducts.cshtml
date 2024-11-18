@@ -1,0 +1,42 @@
+﻿@page
+@model E_commerce.Pages.SellerPages.ViewProductsModel
+@{
+    ViewData["Title"] = "View Products";
+}
+
+<h2>Your Products</h2>
+
+@if (Model.SellerProducts.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Active</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model.SellerProducts)
+            {
+                <tr>
+                    <td>@product.ProductId</td>
+                    <td>@product.ProductName</td>
+                    <td>@product.Description</td>
+                    <td>@product.Category</td>
+                    <td>@product.Price</td>
+                    <td>@product.Quantity</td>
+                    <td>@(product.IsActive == 1 ? "Yes" : "No")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>You have not added any products yet.</p>
+}

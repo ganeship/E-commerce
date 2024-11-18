@@ -1,0 +1,63 @@
+﻿@page
+@model E_commerce.Pages.userpages.ReviewsModel
+@{
+    ViewData["Title"] = "Product Reviews";
+}
+
+<h2>Your Product Reviews</h2>
+
+@if (Model.OrderedProducts.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Rating</th>
+                <th>Comments</th>
+                <th>Review</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model.OrderedProducts)
+            {
+                <tr>
+                    <td>@product.ProductName</td>
+                    <td>
+                        @if (Model.UserReviewedProducts.Contains(product.ProductId))
+                        {
+                            <p>@Model.UserReviews[product.ProductId].Rating</p>
+                        }
+                        else
+                        {
+                            <form method="post" asp-page-handler="AddReview" asp-route-productId="@product.ProductId">
+                                <input type="number" name="rating" min="1" max="5" required />
+                                <textarea name="comments" placeholder="Write a review..." required></textarea>
+                                <button type="submit" class="btn btn-info">Submit Review</button>
+                            </form>
+                        }
+                    </td>
+                    <td>
+                        @if (Model.UserReviewedProducts.Contains(product.ProductId))
+                        {
+                            <p>@Model.UserReviews[product.ProductId].Comments</p>
+                        }
+                    </td>
+                    <td>
+                        @if (!Model.UserReviewedProducts.Contains(product.ProductId))
+                        {
+                            <form method="post" asp-page-handler="AddReview" asp-route-productId="@product.ProductId">
+                                <input type="number" name="rating" min="1" max="5" required />
+                                <textarea name="comments" placeholder="Write a review..." required></textarea>
+                                <button type="submit" class="btn btn-info">Submit Review</button>
+                            </form>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>You have not purchased any products yet.</p>
+}

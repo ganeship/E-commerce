@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Http
+@{
+    var username = Context.Session.GetString("SellerName"); // Assuming you are storing the seller's username in the session
+}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -7,56 +11,48 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/E-commerce.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <!-- Light Blue Theme Styling for Header Components -->
+    
     <style>
-        /* Navbar Brand */
+       
         .navbar-brand {
             font-size: 1.8rem;
             font-weight: bold;
-            font-style:italic;
-            color: #005bb5 !important; /* Light blue color */
+            font-style: italic;
+            color: #005bb5 !important; 
             text-transform: initial;
             letter-spacing: 1px;
         }
 
-        /* Navbar Links */
+        
         .navbar-nav .nav-link {
-            color: #005bb5 !important; /* Light blue for links */
+            color: #005bb5 !important; 
             font-weight: 500;
             margin-right: 1rem;
         }
 
             .navbar-nav .nav-link:hover {
-                color: #004080 !important; /* Slightly darker blue on hover */
+                color: #004080 !important; 
             }
 
-        /* Admin Button */
-        .navbar-nav .btn-primary {
-            background-color: #0073e6; /* Light blue */
-            border-color: #0073e6;
+       
+        .navbar-nav .btn-logout {
+            background-color: #ff4d4d; 
+            border-color: #ff4d4d;
             color: #fff;
             font-weight: 600;
         }
 
-        /* Search Bar */
-        .form-control.w-100 {
-            border-radius: 20px;
-            padding: 0.5rem 1rem;
-            max-width: 300px;
-            border: 1px solid #b3d1ff;
-            color: #005bb5;
-        }
-
-        /* Icons */
+       
         .fa-shopping-cart, .fa-shopping-bag {
             color: #005bb5;
             font-size: 1.5rem;
         }
 
-        /* Dropdown Menu */
+      
         .dropdown-menu {
-            background-color: #e6f2ff; /* Light blue dropdown */
+            background-color: #e6f2ff; 
             border: none;
         }
 
@@ -74,41 +70,31 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">BazaarBox</a>
+                <a class="navbar-brand" asp-area="" asp-page="/Sellerpages/SellerHome">BazaarBox</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1 align-items-center">
+                        
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a asp-page="/AdminPage/AdminLogin" class="btn btn-primary">Admin</a>
-                        </li>
-                        <!-- Expanded search bar -->
-                        <li class="nav-item flex-grow-1">
-                            <input type="text" class="form-control w-100" placeholder="Search..." />
-                        </li>
-                        <!-- Login button with dropdown -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="~/userpages/UserLogin" id="loginDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Login
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="loginDropdown">
-                                <li><a class="dropdown-item" href="~/userpages/UserLogin">UserLogin</a></li>
-                                <li><a class="dropdown-item" href="~/userpages/UserSignUp">UserSignUp</a></li>
-                            </ul>
-                        </li>
-                        <!-- Cart icon -->
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <i class="fa fa-shopping-cart"> Cart</i>
-                            </a>
+                            <a class="nav-link" asp-page="/Sellerpages/Orders">Orders</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-page="/Sellerpages/SellerLogin">
-                                <i class="fa fa-shopping-bag"> Sell</i>
+                            <a class="nav-link" asp-page="/SellerPages/AddProduct">AddProduct</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-page="/SellerPages/ManageProducts">ManageProducts</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-page="/SellerPages/ViewProducts">ViewProducts</a>
+                        </li>
+                    </ul>
+                    
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/Sellerpages/SellerLogin">
+                                <i class="fa fa-sign-out"> Logout</i>
                             </a>
                         </li>
                     </ul>
@@ -119,7 +105,7 @@
 
     <div class="container">
         <main role="main" class="pb-3">
-            @RenderBody()
+            @RenderBody()  
         </main>
     </div>
 

@@ -2,6 +2,8 @@ using E_commerce.Data.Context;
 using E_commerce.Data.Entity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace E_commerce.Pages.userpages
 {
@@ -9,49 +11,65 @@ namespace E_commerce.Pages.userpages
     {
         private readonly DBcontext _context;
 
-        public cartModel(DBcontext dbContext)
+        public cartModel(DBcontext context)
         {
-            _context = dbContext;
+            _context = context;
         }
 
-        // CartItems will be populated and passed to the view.
         public List<CartItem> CartItems { get; set; }
 
-        public IActionResult OnGet()
+        public void OnGet()
         {
-            int userId = 1; // Replace this with the actual authenticated user's ID if applicable.
+            LoadCartItems();
+        }
 
-            // Fetch cart items for the user, including product details and quantities.
+        private void LoadCartItems()
+        {
+            int userId = 1; 
             CartItems = (from cart in _context.Carts
-                         join product in _context.Products on cart.ProductId equals product.ProductId
+                         join product in _context.Products on cart.ProductId equals product.Id
                          where cart.UserId == userId
                          select new CartItem
                          {
                              Product = product,
                              Quantity = cart.Quantity
                          }).ToList();
-
-            // If there are no cart items, you may want to redirect to a page or show a message.
-            if (CartItems == null || !CartItems.Any())
-            {
-                // Optionally redirect to an empty cart or some other page
-                // return RedirectToPage("/EmptyCart"); 
-                // or just return the page with a message that the cart is empty
-            }
-
-            return Page();
         }
 
-        // CartItem class holds product details and quantity.
+      
+        public IActionResult OnPostRemoveItem(int productId)
+        {
+            var cartItem = _context.Carts.FirstOrDefault(c => c.ProductId == productId && c.UserId == 1); // Replace 1 with actual user ID
+            if (cartItem != null)
+            {
+                _context.Carts.Remove(cartItem);
+                _context.SaveChanges();
+            }
+            return RedirectToPage();
+        }
+
+     
+        public IActionResult OnPostUpdateQuantity(int productId, int newQuantity)
+        {
+            var cartItem = _context.Carts.FirstOrDefault(c => c.ProductId == productId && c.UserId == 1); // Replace 1 with actual user ID
+            if (cartItem != null && newQuantity > 0)
+            {
+                cartItem.Quantity = newQuantity;
+                _context.SaveChanges();
+            }
+            return RedirectToPage();
+        }
+
+       
+        public IActionResult OnPostProceedToCheckout()
+        {
+            return RedirectToPage("Checkout");
+        }
+
         public class CartItem
         {
             public product Product { get; set; }
             public int Quantity { get; set; }
-
-        public void OnGet()
-        {
         }
     }
-}
-
 }

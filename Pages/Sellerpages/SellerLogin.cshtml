@@ -1,9 +1,7 @@
 ﻿@page
 @model E_commerce.Pages.Sellerpages.SellerLoginModel
-@{
-}
-<h1>@ViewData["Title"]</h1>
 
+<h1>@ViewData["Title"]</h1>
 
 <div class="container">
     <div class="row">
@@ -13,21 +11,17 @@
         <div class="col-lg-6 col-md-6">
         </div>
 
-        <div class="col-lg-4 col-md-2 ">
-
+        <div class="col-lg-4 col-md-2">
             <form method="post">
-               
-                
-
                 <div>
                     <label asp-for="user1.Email"></label>
-                    <input asp-for="user1.Email" class="form-control">
+                    <input asp-for="user1.Email" class="form-control" />
                     <span asp-validation-for="user1.Email" class="text-danger"></span>
                 </div>
-                
+
                 <div>
                     <label asp-for="user1.Password"></label>
-                    <input asp-for="user1.Password" class="form-control">
+                    <input asp-for="user1.Password" class="form-control" />
                     <span asp-validation-for="user1.Password" class="text-danger"></span>
                 </div>
                 <br />
@@ -37,13 +31,8 @@
                     <button type="button">SignUp</button>
                 </a>
 
-                
                 <button type="Reset" style="color:blue">Reset</button>
-
             </form>
-
-
         </div>
     </div>
 </div>
-

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -7,9 +7,14 @@
     <RootNamespace>E_commerce</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>   
-    <Folder Include="Pages\adminpages\" />
-    <Folder Include="Pages\sellerpages\" />
+  <ItemGroup>
+    <Compile Remove="Pages\adminpages\**" />
+    <Content Remove="Pages\adminpages\**" />
+    <EmbeddedResource Remove="Pages\adminpages\**" />
+    <None Remove="Pages\adminpages\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="wwwroot\Images\Products\" />
     <Folder Include="wwwroot\Images\Users\" />
   </ItemGroup>

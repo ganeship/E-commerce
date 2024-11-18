@@ -22,6 +22,9 @@ namespace E_commerce.Data.Context
         public DbSet<payment> Payments { get; set; }
 
         public DbSet<cart> Carts { get; set; }
+        
+        public DbSet<review>Reviews { get; set; }
+        
 
     }
 }

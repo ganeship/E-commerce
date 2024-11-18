@@ -5,7 +5,7 @@ namespace E_commerce.Data.Entity
 {
     public class product
     {
-        [Key] 
+        [Key]
         public int Id { get; set; }
 
         [Required]
@@ -35,5 +35,8 @@ namespace E_commerce.Data.Entity
         public string? ImagePath2 { get; set; }
         public string? ImagePath3 { get; set; }
         public string? ImagePath4 { get; set; }
+
+        public int SellerId { get; set; } = 0;
+    
     }
 }

@@ -1,11 +1,10 @@
-﻿@page
+﻿@* @page
 @model E_commerce.Pages.userpages.UserHomeModel
 @{
     Layout = "_LayoutUser";
+
 }
-@{
-    
-}
+<h1>Add Product</h1>
 
 
 <div class="container-fluid">
@@ -81,7 +80,120 @@
                         </div>
                     </div>
                 }
+                
             </div>
         </main>
     </div>
 </div>
+ *@
+ @page
+@model E_commerce.Pages.userpages.UserHomeModel
+@{
+    Layout = "_LayoutUser";
+}
+
+<h1>Products</h1>
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- Side Navigation Bar -->
+        <nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+            <div class="position-sticky">
+                <form method="post" asp-page-handler="Filter">
+                    <button type="submit" class="btn btn-outline-dark w-100 mb-2">Home</button>
+                </form>
+
+                <h4>Navigation</h4>
+                <button class="btn btn-outline-dark w-100 mb-2" data-bs-toggle="collapse" data-bs-target="#collapse-Orders" aria-expanded="false" aria-controls="collapse-Orders">
+                    Orders
+                </button>
+                <div class="collapse" id="collapse-Orders">
+                    <div class="dropdown">
+                        <a href="/userpages/userorder" class="dropdown-item w-100">My Orders</a>
+                    </div>
+                </div>
+
+                <h4>Filters</h4><br />
+                <h5>Categories</h5>
+                <button class="btn btn-outline-primary w-100 mb-2" data-bs-toggle="collapse" data-bs-target="#collapse-Categories" aria-expanded="false" aria-controls="collapse-Categories">
+                    Categories
+                </button>
+                <div class="collapse" id="collapse-Categories">
+                    <div class="dropdown">
+                        @foreach (var category in Model.categorySubcategoryGroups)
+                        {
+                            <form method="post" asp-page-handler="Filter" asp-route-category="@category.Key">
+                                <button type="submit" class="dropdown-item w-100">@category.Key</button>
+                            </form>
+                        }
+                    </div>
+                </div>
+
+                <h5>Sub Categories</h5>
+                @foreach (var category in Model.categorySubcategoryGroups)
+                {
+                    <form method="post" asp-page-handler="Filter" asp-route-category="@category.Key">
+                        <button class="btn btn-outline-primary w-100 mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-@category.Key" aria-expanded="false" aria-controls="collapse-@category.Key">
+                            @category.Key
+                        </button>
+                    </form>
+
+                    <div class="collapse" id="collapse-@category.Key">
+                        <div class="dropdown">
+                            @foreach (var subcategory in category.Value)
+                            {
+                                <form method="post" asp-page-handler="Filter" asp-route-category="@category.Key" asp-route-subcategory="@subcategory">
+                                    <button type="submit" class="dropdown-item w-100">@subcategory</button>
+                                </form>
+                            }
+                        </div>
+                    </div>
+                }
+            </div>
+        </nav>
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <div class="row">
+                @foreach (var product in Model.filterproducts)
+                {
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <img src="@(product.ImagePath1 ?? "default-image.jpg")" class="card-img-top" alt="Product Image">
+                            <div class="card-body">
+                                <h5 class="card-title">@product.ProductName</h5>
+                                <p class="card-text">@product.Description</p>
+                                <p class="card-text"><strong>Price: ₹@product.Price</strong></p>
+                                <form method="post">
+                                    <input type="hidden" name="productId" value="@product.Id" />
+                                    <input type="number" name="quantity" min="1" value="1" class="form-control mb-2" />
+                                    <button type="submit" name="action" value="add_to_cart" class="btn btn-primary w-100">Add to Cart</button>
+                                    <button type="submit" name="action" value="buy_now" class="btn btn-success w-100 mt-2">Buy Now</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </main>
+    </div>
+</div>
+<style>
+    .card {
+        height: 100%;
+    }
+
+    .card-img-top {
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .card-title, .card-text, .btn {
+        margin-bottom: 0.5rem;
+    }
+</style>

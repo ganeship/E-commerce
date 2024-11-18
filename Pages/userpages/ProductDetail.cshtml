@@ -1,8 +1,9 @@
-﻿ @page
+﻿  @page
 @model E_commerce.Pages.userpages.ProductDetailModel
 
 @{
     ViewData["Title"] = "Product Details";
+    
 }
 
 <h1>@Model.Product.ProductName</h1>
@@ -40,14 +41,11 @@
         <p><strong>Category:</strong> @Model.Product.Category</p>
         <p><strong>SubCategory:</strong> @Model.Product.SubCategory</p>
 
-        <form method="post">
-            <label for="quantity">Quantity:</label>
-            <input type="number" name="Quantity" value="1" min="1" />
-            <button type="submit" class="btn btn-primary">Add to Cart</button>
-        </form>
+       
     </div>
+    <button type="submit" style="color:aqua">Add to Cart</button>
 </div>
 
-<script src="~/js/AddToCart.js"></script>
 
-     
+      
+       
